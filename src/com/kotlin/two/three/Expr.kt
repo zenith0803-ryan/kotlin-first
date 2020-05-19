@@ -1,15 +1,16 @@
-package com.kotlin.two.two
+package com.kotlin.two.three
 
 import java.lang.IllegalArgumentException
 
-// 스카트캐스트 : 타입검사와 타입캐스트를 포함
+// 스마트캐스트 : 타입검사와 타입캐스트를 포함
 interface Expr
 
 //value라는 프로퍼티만 존재하는 단순한 클래스 Expr인터페이스를 구현
 class Num (val value : Int) : Expr
 
 //Expr타입의 객체라면 어떤것이나 Sum의 인자가 될수 있다. 따라서 Num이나 다른 Sum이 인자로 온다.
-class Sum( val left : Expr, val right : Expr) : Expr
+class Sum(val left : Expr, val right : Expr) :
+    Expr
 
 
 fun eval ( e: Expr) : Int {
@@ -41,7 +42,9 @@ fun eval2 ( e: Expr) : Int  =
 fun eval3( e: Expr) : Int =
     when ( e ){
         is Num -> e.value
-        is Sum -> eval3(e.right) + eval3(e.left)
+        is Sum -> eval3(e.right) + eval3(
+            e.left
+        )
         else -> throw IllegalArgumentException("Unknown expression")
     }
 
@@ -65,11 +68,29 @@ fun evalWithLogging(e: Expr) : Int =
         else -> throw IllegalArgumentException("Unknown Exception")
     }
 fun main(args : Array<String>){
-    println( eval(Sum(Sum(Num(1), Num(2)) ,Num(4)  )) )
+    println(
+        eval(
+            Sum( Sum(  Num(1), Num(2) ), Num(4) )
+        )
+    )
 
-    println( eval2( Sum(Num(1), Num(2))))
+    println(
+        eval2(
+            Sum( Num( 1 ), Num(2)
+            )
+        )
+    )
 
-    println( eval3( Sum(Num(1),Num(2))))
+    println(
+        eval3(
+            Sum( Num( 1 ), Num(2) )
+        )
+    )
 
-    println( evalWithLogging( Sum( Sum(Num(1),Num(2)), Num(4) )))
+    println(
+        evalWithLogging(
+            Sum( Sum( Num(1), Num(2) ), Num(4)
+            )
+        )
+    )
 }

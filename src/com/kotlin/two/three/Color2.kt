@@ -1,4 +1,4 @@
-package com.kotlin.two.two
+package com.kotlin.two.three
 
 import java.lang.Exception
 
@@ -21,15 +21,21 @@ fun getMnemonic(color2 : Color2)=  //함수의 반환값으로 when사용
         Color2.RED -> "Richard"
         Color2.ORANGE -> "Of"
         Color2.YELLOW -> "York"
-        Color2.GREEN ,Color2.BLUE -> "GreenBattle" //여러개값 사용시
+        Color2.GREEN, Color2.BLUE -> "GreenBattle" //여러개값 사용시
         //break가 no need
     }
 
 
 fun mix(c1: Color2, c2 : Color2) =
     when( setOf(c1, c2)){  //when의 분기조건 부분에 식을 넣을수 있다.
-        setOf(Color2.RED, Color2.YELLOW) -> Color2.ORANGE   //두색을 혼합하면 다른색깔 집합비교사용
-        setOf(Color2.YELLOW, Color2.BLUE) -> Color2.GREEN
+        setOf(
+            Color2.RED,
+            Color2.YELLOW
+        ) -> Color2.ORANGE   //두색을 혼합하면 다른색깔 집합비교사용
+        setOf(
+            Color2.YELLOW,
+            Color2.BLUE
+        ) -> Color2.GREEN
         else -> throw Exception("Dirty Color")
     }
 //set 집합, 순서는 무의미
@@ -48,7 +54,17 @@ fun main(args : Array<String>){
     println(Color2.GREEN)
     println(Color2.GREEN.rgb())
     println(getMnemonic(Color2.BLUE))
-    println(mix(Color2.YELLOW, Color2.RED))
-    println(mixOptimized(Color2.RED, Color2.YELLOW))
+    println(
+        mix(
+            Color2.YELLOW,
+            Color2.RED
+        )
+    )
+    println(
+        mixOptimized(
+            Color2.RED,
+            Color2.YELLOW
+        )
+    )
 
 }

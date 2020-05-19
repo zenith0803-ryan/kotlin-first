@@ -1,4 +1,4 @@
-package com.kotlin.two.two
+package com.kotlin.two.three
 
 enum class Color {
     RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
