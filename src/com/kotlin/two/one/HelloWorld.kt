@@ -1,4 +1,4 @@
-/*
+package com.kotlin.two.one/*
 ㅇ함수선언할때는 fun키워드를 사용한다.
 ㅇ파라미터이름 뒤에 파라미터 타입을 쓴다.
 ㅇ 함수를 최상위 수준에 정의할수 있다.(클래스안에 함수를 넣을필요가 없다.)
@@ -10,10 +10,10 @@ fun main(args : Array<String>){
     println("Hello, world!")
      if(args.size > 0)
         print("${args[0]}")
-    //println("Hello World" + max2(2,3))
-    //println(yearsToCompute)
+    //println("Hello World" + com.kotlin.two.one.max2(2,3))
+    //println(com.kotlin.two.getYearsToCompute)
 }
-// 함수이름 :max, 파라미터목록(a: Int, b: Int) , 반환타입 : Int
+// 함수이름 :com.kotlin.two.one.max, 파라미터목록(a: Int, b: Int) , 반환타입 : Int
 fun max(a: Int, b: Int): Int{
     return if(a>b) a else b
 }
@@ -56,7 +56,7 @@ fun varTest(){
     // var 변수의 값을 변경할수있다. But 타입은 고정돼 바뀌지 않는다.
     var answer = 42
     answer = 43
-    //answer = "no Answer"  //"Error : type misMatching"
+    //com.kotlin.two.getAnswer = "no Answer"  //"Error : type misMatching"
 }
 // 컴파일러는 변수선언시점의 초기화식으로부터 변수타입을 추론, 변수선언 이후 변수 재대입이 이뤄질때는 이미 추론한 변수타입을 염두에두고 대입문의 타입을 검사.
 
