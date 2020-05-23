@@ -7,6 +7,6 @@ fun main(args: Array<String>){
     println(strings.last())
     val numbers: Collection<Int> = setOf(1,14,2)
     println(numbers.max())
-    // last, max는 모두 확장함수다. 
+    // last, max는 모두 확장함수다.
 
 }
