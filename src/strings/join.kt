@@ -25,3 +25,11 @@ fun<T> joinToString3(
 
 //static 메소드라 호출하기쉽다.
 //JoinKt.joinToString()....
+
+// 3.3
+fun String.lastChar(): Char = this.get(this.length -1 )
+// 함수이름앞에 확장할 클래스 이름을 덧붙이자
+// 클래스이름 - 수신객체타입( String)
+// 확장함수가 호출되는 대상이되는값(객체) - 여기서는 this
+
+fun String.lastChar2(): Char = get(length-1)  //this사용가능
