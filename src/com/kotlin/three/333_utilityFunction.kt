@@ -22,12 +22,12 @@ fun main(args : Array<String>){
     println(list.joinToString(" "))
 
 
-    //list.join(" ")
+//    list.join(" ")
     //확장함수가 정적메소드와 같은 특징을 가지므로 확장함수를 하위클래스에서 오버라이드할수없다.
 }
 
 //문자열의 컬렉션에 대해서만 호출할수 있는 join함수를 정의
-fun <T> Collection<String>.join(  //Collection<T>에 대한 확장함수선언
+fun  Collection<Int>.join(  //Collection<T>에 대한 확장함수선언
     separator: String = ", ", //디폴트값 지정
     prefix: String = "",
     postfix: String = ""

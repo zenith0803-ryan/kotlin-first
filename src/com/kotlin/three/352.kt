@@ -18,7 +18,7 @@ fun parsePath(path: String){
 
 //3.10 경로파싱에 정규식 사용하기
 fun parsePath_2(path: String){
-    val regex = """(.+)/(.+)\.(.+)""".toRegex()
+    val regex = """(.+)/(.+)\.(.+)/(.+)""".toRegex()
     //            디렉토리/ 파일이름 . 확장자
     // 3중 따옴표 문자열을 사용해 정규식 사용
     // 3중 따옴표 문자열에서는 역슬래시(\)를 포함한 어떤 문자도 이스케이프할 필요가 없다.
@@ -26,14 +26,14 @@ fun parsePath_2(path: String){
     //  3중문자열에서는  \.
     val matchResult = regex.matchEntire(path)
     if( matchResult != null){
-        val(directory, filename, extension) = matchResult.destructured
-        println("Dir: $directory, name: $filename, ext: $extension")
+        val(directory, filename, extension, test) = matchResult.destructured
+        println("Dir: $directory, name: $filename, ext: $extension, test: $test")
     }
 
 }
 
 fun main(args: Array<String>){
-    parsePath("/Users/yole/kotlin-book/chapter.adoc")
+    //parsePath("/Users/yole/kotlin-book/chapter.adoc")
 
-    parsePath_2("/Users/yole/kotlin-book/chapter.adoc")
+    parsePath_2("/Users/yole/kotlin-book/chapter.adoc/abcde")
 }

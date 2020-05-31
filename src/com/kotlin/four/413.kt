@@ -16,10 +16,10 @@ internal open class TalkativeButton : Focusable {
     protected fun whisper() = println("Let's talk!")
 }
 
-fun TalkativeButton.giveSpeech(){  // public멤버가 자신의internal 수신타입인 TalkativeButton을 노출함
-    yell()      //오류 yell에 접근할수 없음, yell은 TalkativeButton의 private
-    whisper()  // 오류 : whisper는 TalkativeButton의 protected멤버
-}
+//fun TalkativeButton.giveSpeech(){  // public멤버가 자신의internal 수신타입인 TalkativeButton을 노출함
+  //  yell()      //오류 yell에 접근할수 없음, yell은 TalkativeButton의 private
+//    whisper()  // 오류 : whisper는 TalkativeButton의 protected멤버
+//}
 
 // public 함수이 giveSpeech에서 그보다 가시성이 낮은 (internal) 타입인 TalktaveButtond 을 참조할수 없다.
 // 클래스자신의 가시성과 같거나 높아야하고 메소드 시그니처에 사용된 모든타입의 가시성은 그 메소드의 가시성과 같거나 높어야 한다.
