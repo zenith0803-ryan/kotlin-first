@@ -1,7 +1,5 @@
 package com.kotlin.three
 
-import java.lang.StringBuilder
-
 // joinToString 최종버전
 fun <T> Collection<T>.joinToString(  //Collection<T>에 대한 확장함수선언
     separator: String = ", ", //디폴트값 지정

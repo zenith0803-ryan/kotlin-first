@@ -1,7 +1,5 @@
 package strings
 
-import java.lang.StringBuilder
-
 fun<T> joinToString3(
     collection: Collection<T>,
     separator: String = "| ",  //디폴트값이 지정된 파라미터들

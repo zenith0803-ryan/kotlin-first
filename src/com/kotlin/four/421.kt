@@ -1,7 +1,5 @@
 package com.kotlin.four
 
-import com.sun.org.apache.xpath.internal.operations.Bool
-
 // 4.2.1 클래스초기화 : 주생성자와 초기화블록
 
 class User(val nickname: String) // val : 파라미터에 상응하는 프로퍼티가 생성된다는 뜻이다.

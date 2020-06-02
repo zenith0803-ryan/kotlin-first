@@ -2,8 +2,6 @@ package com.kotlin.two.five
 
 import java.io.BufferedReader
 import java.io.StringReader
-import java.lang.IllegalArgumentException
-import java.lang.NumberFormatException
 
 //코틀린의 예외처리는 자바와 비슷하다.
 

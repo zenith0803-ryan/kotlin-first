@@ -1,8 +1,5 @@
 package com.kotlin.four
 
-import java.lang.Exception
-import java.lang.IllegalArgumentException
-
 // 4.1.5 봉인된 클래스 : 클래스 계층 정의시 계층 확장제한
 
 //4.12

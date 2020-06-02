@@ -1,6 +1,6 @@
 package com.kotlin.two.two
 
-import java.util.Random   //표준자바 라이브러리 클래스 임포트
+import java.util.*
 
 //패키지선언
 

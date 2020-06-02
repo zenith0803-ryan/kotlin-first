@@ -1,8 +1,5 @@
 package com.kotlin.four
 
-import java.util.stream.Collector
-import java.util.stream.Stream
-
 //4.3.3 클래스 위임: by 키워드 사용
 //데코레이터 패턴 : 상속을 허용하지 않는 클래스(기존 클래스) 대신 사용할수 있는 새로운 클래스(데코레이터)를 만들되
 // 기존 클래스와 같은 인터페이스를 데코레이터가 제공하게 만들고,

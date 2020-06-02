@@ -1,7 +1,5 @@
 package com.kotlin.two.three
 
-import java.lang.Exception
-
 enum class Color2( val r: Int,  val g : Int,  val b : Int) {  //상수의 프로퍼티를 정의한다
     RED(255,0,0), //각 상수를 생성할때 그에 따른 프로퍼티를 정한다.
     ORANGE(255,165,0),

@@ -1,7 +1,5 @@
 package com.kotlin.two.three
 
-import java.lang.IllegalArgumentException
-
 // 스마트캐스트 : 타입검사와 타입캐스트를 포함
 interface Expr
 
