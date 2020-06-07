@@ -1,6 +1,7 @@
 package com.kotlin.five
 
 
+
 fun main(args: Array<String>){
     val list = listOf(1,2,3,4)
     println( list.filter { it % 2 == 0 })
@@ -36,4 +37,10 @@ fun main(args: Array<String>){
     val list2 = listOf("a", "ab", "b")
     println(list2.groupBy(String::first))
 
+    class Book(val title: String, val authors: List<String>)
+    val books = listOf(Book("토지", listOf("김진명","김경리")) , Book("토끼인형", listOf("크레","김경리"))  )
+    println (books.flatMap { it.authors }.toSet()) //books 컬렉션에 있는 책을 쓴 모든 저자의 집합
+
+    val strings = listOf("abc", "def")
+    println(strings.flatMap { it.toList() })
 }
