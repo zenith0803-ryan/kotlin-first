@@ -12,7 +12,7 @@ public class Button {
         Button button = new Button();
         button.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View99 v) {
                 System.out.println("Clicked!!!");
             }
         });
