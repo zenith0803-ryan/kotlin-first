@@ -1,6 +1,6 @@
-package com.kotlin.six
-
+import org.junit.Assert
 import org.junit.Before
+import org.junit.Test
 
 class MyService{
     fun performAction() : String = "foo"
@@ -11,5 +11,10 @@ class MyTest{
     fun setUp(){
         myService = MyService()  //setup메소드안에서 진짜 초깃값을 지정한다.
     }
+    @Test
+    fun testAction(){
+        Assert.assertEquals("foo", myService!!.performAction()) //!!나 ?을 꼭 써야 한다.
+    }
+
 
 }
