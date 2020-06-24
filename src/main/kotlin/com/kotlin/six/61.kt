@@ -1,8 +1,11 @@
 package com.kotlin.six
 
+import JavaPerson
 import java.awt.event.ActionEvent
 import javax.swing.AbstractAction
 import javax.swing.JList
+import StringProcessor
+
 
 fun strLen(s: String) = s.length
 
@@ -109,5 +112,51 @@ fun main(args: Array<String>){
 
     //test
 
+    println("list 6.12 null이  될수 있는 수신객체에 대해 확장함수 호출하기")
+    fun verifyUserInput(input: String?){
+        if(input.isNullOrBlank()){   //안전한 호출을 하지 않아도 된다.
+            println("Please fill in the required fields")
+        }
+    }
+    verifyUserInput(null)
+    verifyUserInput(" ")
 
+    println("list 6.13 널이 될수 있는 타입 파라미터 다루기")
+    fun<T> printHashCode(t: T){
+        println(t?.hashCode())  //t가 널이 될수 있으므로 안전한 호출을 해야한다.
+    }
+    printHashCode(null)  //T 타입은 Any?로 추정된다.
+
+    println("list 6.14 타입파라미터에 대해 널이 될수 없는 상한을 사용하기")
+    fun<T: Any> printHashCode2(t:T){  //T:Any -> T는 널이 될수 없다.
+        println(t.hashCode())
+    }
+    //printHashCode2(null)
+    printHashCode2(234)
+
+    println("list 6.16 null검사없이 자바클래스 접근하기")
+    fun yellAt(javaPerson: JavaPerson){
+        println(javaPerson.name.toUpperCase() + "!!!") // toUpperCase()의 수신객체 person.name이 널이어서 예외가 발생함
+    }
+    //yellAt( JavaPerson(null))
+    //java.lang.IllegalArgumentExceptoin : Parameter specified as non-null
+    //is null : method toUpperCase, paramemter $receive
+    fun yellAt2(javaPerson: JavaPerson){
+        println(javaPerson.name ?: "AnyOne".toUpperCase() + "!!!") // toUpperCase()의 수신객체 person.name이 널이어서 예외가 발생함
+    }
+    yellAt2(JavaPerson(null))
+
+    println("list 6.19 자바인터페이스를 여러 다른 널 가능성으로 구현하기")
+    class StringPrinter : StringProcessor{
+        override fun process(value: String) {
+            println(value)
+        }
+    }
+    class NullableStringPrinter : StringProcessor{
+        override fun process(value: String?) {
+            if( value != null){
+                println(value)
+            }
+        }
+    }
 }
