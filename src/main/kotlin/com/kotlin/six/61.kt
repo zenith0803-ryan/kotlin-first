@@ -142,6 +142,7 @@ fun main(args: Array<String>){
     //java.lang.IllegalArgumentExceptoin : Parameter specified as non-null
     //is null : method toUpperCase, paramemter $receive
     fun yellAt2(javaPerson: JavaPerson){
+
         println(javaPerson.name ?: "AnyOne".toUpperCase() + "!!!") // toUpperCase()의 수신객체 person.name이 널이어서 예외가 발생함
     }
     yellAt2(JavaPerson(null))
